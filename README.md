@@ -40,49 +40,34 @@ module "dms_replication_instance" {
 |------|---------|
 | aws | n/a |
 
-## Modules
-
-No modules.
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [aws_dms_replication_instance.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_replication_instance) | resource |
-| [aws_dms_replication_subnet_group.dms](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_replication_subnet_group) | resource |
-| [aws_security_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group_rule.egress](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.ingress_cidr_blocks](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.ingress_security_groups](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| allocated_storage | The amount of storage (in gigabytes) to be initially allocated for the replication instance. | `number` | `50` | no |
-| allow_major_version_upgrade | Indicates that major version upgrades are allowed. | `bool` | `false` | no |
-| allowed_cidr_blocks | List of CIDR blocks to be allowed to connect to the replication instance. | `list(string)` | `[]` | no |
-| allowed_security_groups | List of existing Security Groups IDs to be allowed to connect to the replication instance. | `list(string)` | `[]` | no |
-| apply_immediately | Indicates whether the changes should be applied immediately or during the next maintenance window. Only used when updating an existing resource. | `bool` | `false` | no |
-| auto_minor_version_upgrade | Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window. | `bool` | `false` | no |
-| availability_zone | The EC2 Availability Zone that the replication instance will be created in. | `string` | n/a | yes |
-| engine_version | The engine version number of the replication instance. | `string` | n/a | yes |
-| multi_az | Wether deploys a primary replication instance in one Availability Zone (AZ) and a standby in another AZ. | `bool` | `false` | no |
-| preferred_maintenance_window | The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). | `string` | n/a | yes |
-| publicly_accessible | Specifies the accessibility options for the replication instance. A value of true represents an instance with a public IP address. A value of false represents an instance with a private IP address. | `bool` | `false` | no |
-| replication_instance_class | The compute and memory capacity of the replication instance as specified by the replication instance class. | `string` | `"dms.t3.micro"` | no |
-| replication_instance_id | The replication instance identifier. | `string` | n/a | yes |
-| replication_subnet_group_id | The name for the replication subnet group. This value is stored as a lowercase string. | `string` | n/a | yes |
-| subnet_ids | A list of the EC2 subnet IDs for the subnet group. | `list(string)` | n/a | yes |
-| vpc_id | VPC ID to create the cluster in (e.g. `vpc-a22222ee`). | `string` | n/a | yes |
+| allocated\_storage | The amount of storage (in gigabytes) to be initially allocated for the replication instance. | `number` | `50` | no |
+| allow\_major\_version\_upgrade | Indicates that major version upgrades are allowed. | `bool` | `false` | no |
+| allowed\_cidr\_blocks | List of CIDR blocks to be allowed to connect to the replication instance. | `list(string)` | `[]` | no |
+| allowed\_security\_groups | List of existing Security Groups IDs to be allowed to connect to the replication instance. | `list(string)` | `[]` | no |
+| apply\_immediately | Indicates whether the changes should be applied immediately or during the next maintenance window. Only used when updating an existing resource. | `bool` | `false` | no |
+| auto\_minor\_version\_upgrade | Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window. | `bool` | `false` | no |
+| availability\_zone | The EC2 Availability Zone that the replication instance will be created in. | `string` | n/a | yes |
+| engine\_version | The engine version number of the replication instance. | `string` | n/a | yes |
+| multi\_az | Wether deploys a primary replication instance in one Availability Zone (AZ) and a standby in another AZ. | `bool` | `false` | no |
+| preferred\_maintenance\_window | The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC). | `string` | n/a | yes |
+| publicly\_accessible | Specifies the accessibility options for the replication instance. A value of true represents an instance with a public IP address. A value of false represents an instance with a private IP address. | `bool` | `false` | no |
+| replication\_instance\_class | The compute and memory capacity of the replication instance as specified by the replication instance class. | `string` | `"dms.t3.micro"` | no |
+| replication\_instance\_id | The replication instance identifier. | `string` | n/a | yes |
+| replication\_subnet\_group\_id | The name for the replication subnet group. This value is stored as a lowercase string. | `string` | n/a | yes |
+| subnet\_ids | A list of the EC2 subnet IDs for the subnet group. | `list(string)` | n/a | yes |
+| vpc\_id | VPC ID to create the cluster in (e.g. `vpc-a22222ee`). | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | arn | Amazon Resource Name (ARN) of the DMS Replication Instance. |
-| private_ips | List of the private IP addresses of the DMS Replication Instance. |
-| public_ips | List of the public IP addresses of the DMS Replication Instance. |
+| private\_ips | List of the private IP addresses of the DMS Replication Instance. |
+| public\_ips | List of the public IP addresses of the DMS Replication Instance. |
 
 <!--- END_TF_DOCS --->
 
